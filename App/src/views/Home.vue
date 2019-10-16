@@ -1,5 +1,5 @@
 <template>
-  <v-container class="my-5 round grey lighten-3">
+  <v-container class="my-1">
   <Navbar /> 
     <v-layout row wrap>
         <v-flex xs12 sm6 lg3> 
@@ -14,7 +14,6 @@
                         <v-btn icon>
                             <v-icon color="grey darken-4">mdi-soccer</v-icon>
                         </v-btn>
-
                     </v-card-actions>
                 </v-card>
             </v-hover>
@@ -87,6 +86,15 @@
             </v-row>
              </template>
              <template v-else>
+        <material-card
+          color="green"
+          flat
+          full-width
+          title="Table on Plain Background"
+          text="Here is a subtitle for this table"
+        >
+
+        </material-card>
                <v-simple-table class="elevation-1 round">
                 <thead class="grey darken-4 round round">
                   <tr class="round">
@@ -105,12 +113,12 @@
           <tr class="tex-center" v-for="(reservation, i) in reservations" >
           <td class="text-center grey darken-4 grey--text font-weight-bold subtitle-1">{{ ++i }}</td>
           <td class="text-center font-weight-bold">{{ reservation.id }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.company_reserve }}</td>
+          <td class="text-center font-weight-bold">{{ reservation.company_reserve.name }}</td>
           <td class="text-center font-weight-bold">{{ reservation.schedule_date }}</td>
           <td class="text-center font-weight-bold">{{ reservation.schedule_time }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.field_reserve}}</td>
-          <td class="text-center font-weight-bold">{{ reservation.field_reserve}}</td>
-          <td class="text-center font-weight-bold">{{ reservation.customer_reserve}}</td>
+          <td class="text-center font-weight-bold">{{ reservation.field_reserve.name }}</td>
+          <td class="text-center font-weight-bold">{{ reservation.field_reserve.price }}</td>
+          <td class="text-center font-weight-bold">{{ reservation.customer_reserve.first_name}}</td>
           <td><v-chip class="ma-3" label light  color="success" small>Completado</v-chip></td>
         </tr>
       </tbody>

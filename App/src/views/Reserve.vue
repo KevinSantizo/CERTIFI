@@ -1,37 +1,37 @@
 <template>
-    <v-container class="my-5 round grey lighten-3">
+    <v-container>
         <Navbar /> 
         <v-layout row wrap>
             <v-flex xs12 sm6 lg3 v-for="company in companies "> 
                 <div class="my-3">
                     <v-hover v-slot:default="{ hover }">
-                    <v-card @click="" class="mx-2 " max="300" flat   :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }" >
+                    <v-card class="mx-2 " max="300" flat   :elevation="hover ? 12 : 5" :class="{ 'on-hover': hover }" >
+                        <div class="green accent-1">
                         <v-row justify="center" align="center">
-                            <v-chip class="ma-2 font-weight-bold subtitle-1" draggable  color="cyan" label text-color="white" align="center" justify="center"><v-icon left>mdi-soccer</v-icon>{{ company.name }}</v-chip>
+                            <v-chip class="ma-2 font-weight-medium subtitle-2" color="teal darken-4" label text-color="white" align="center" justify="center"><v-icon left>mdi-soccer</v-icon>{{ company.name }}</v-chip>
                         </v-row>
                         <v-row justify="center" align="center">
                             <span class="title">{{ company.address }}</span>
                     </v-row>
-        <v-card-actions>
-        <v-spacer></v-spacer>     
-        </v-card-actions>
-            <v-expansion-panels>
-                  <v-expansion-panel  >
-                     <v-expansion-panel-header class="teal--text font-weight-bold subtitle-1"><span>Ver horarios <v-icon left color="teal">mdi-calendar-clock</v-icon></span></v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <v-slide-group class="pa-1" center-active show-arrows>
-                            <v-slide-item v-for="n in 15" :key="n" v-slot:default="{ active, toggle }">
-                                <v-chip class="ma-3"   color="light-green accent-3" @click="" label text-color="black" align="center" justify="center">12:00 PM</v-chip>
-                            </v-slide-item>
-                        </v-slide-group>
-                    </v-expansion-panel-content>
-                   </v-expansion-panel>
-            </v-expansion-panels>
+                    <v-divider></v-divider>
+                    </div>
+                    
+            <div class="ma-4">
+         <v-chip-group multiple column active-class="light-green accent-3 black--text font-weight-medium">
+        <v-chip v-for="tag in tags" small :key="tag">
+          {{ tag }}
+        </v-chip>
+      </v-chip-group>
+             <v-card-actions>
+      <v-btn color="success" small outlined class="my-1t black--text" @click="">Reservar</v-btn>
+    </v-card-actions>
+            </div>
+     
         </v-card>
            </v-hover>
            </div>
              </v-flex>
-                </v-layout>
+                </v-layout> 
     </v-container>
   
 </template>
@@ -39,12 +39,27 @@
 <script>
 import axios from 'axios'
 import Navbar from '@/components/Navbar'
+import Multiselect from 'vue-multiselect'
 
 export default {
+  components: {
+    Multiselect
+  },
   data: () => ({
         reservations: [ ] ,
         companies: [ ],
-        show: false
+        show: false,
+      tags: [
+        '1:00 PM',
+        '2:00 PM',
+        '3:00 PM',
+        '4:00 PM',
+        '5:00 PM',
+        '6:00 PM',
+        '7:00 PM',
+        '8:00 PM',
+        '9:00 PM',
+      ],
     }),
      components: {
     Navbar

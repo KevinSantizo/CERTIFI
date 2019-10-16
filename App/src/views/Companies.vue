@@ -1,5 +1,5 @@
 <template>
-    <v-container class="my-5 round grey lighten-3">
+    <v-container class="my-1">
     <Navbar /> 
       <v-layout row wrap>
        <v-flex xs12 sm6 lg3 v-for="company in companies "> 
