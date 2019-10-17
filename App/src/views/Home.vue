@@ -86,39 +86,33 @@
             </v-row>
              </template>
              <template v-else>
-        <material-card
-          color="green"
-          flat
-          full-width
-          title="Table on Plain Background"
-          text="Here is a subtitle for this table"
-        >
 
-        </material-card>
-               <v-simple-table class="elevation-1 round">
-                <thead class="grey darken-4 round round">
+               <v-simple-table class="elevation-3 round">
+                <thead>
                   <tr class="round">
-                    <th class="text-center grey--text subtitle-1 ">No.</th>
-                    <th class="text-center grey--text subtitle-1">Id Reservación</th>
-                    <th class="text-center grey--text subtitle-1">Compañía</th>
-                    <th class="text-center grey--text subtitle-1">Fecha</th>
-                    <th class="text-center grey--text subtitle-1">Horario</th>
-                    <th class="text-center grey--text subtitle-1">Tipo de Cancha</th>
-                    <th class="text-center grey--text subtitle-1">Precio</th>
-                    <th class="text-center grey--text subtitle-1">Cliente</th>
-                    <th class="text-center grey--text subtitle-1">Estado</th>
+                    <th class="text-center  font-weight-bold  black--text subtitle-1 ">No.</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Id Reservación</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Compañía</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Fecha</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Horario</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Tipo de Cancha</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Precio</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Cliente</th>
+                    <th class="text-center font-weight-bold black--text subtitle-1">Estado</th>
                   </tr>
                 </thead>
                 <tbody>
           <tr class="tex-center" v-for="(reservation, i) in reservations" >
-          <td class="text-center grey darken-4 grey--text font-weight-bold subtitle-1">{{ ++i }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.id }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.company_reserve.name }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.schedule_date }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.schedule_time }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.field_reserve.name }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.field_reserve.price }}</td>
-          <td class="text-center font-weight-bold">{{ reservation.customer_reserve.first_name}}</td>
+          <td class="text-center">{{ ++i }}</td>
+          <td class="text-center ">{{ reservation.id }}</td>
+          <td class="text-center ">{{ reservation.company_reserve.name }}</td>
+          <td class="text-center ">{{ reservation.schedule_date }}</td>
+          <td class="text-center ">{{ reservation.schedule_time }}</td>
+          <td class="text-center "  v-if="reservation.field_reserve.type == 1">5 jugadores</td>
+          <td class="text-center" v-else-if="reservation.field_reserve.type==2">7 jugadores</td>
+          <td class="text-center" v-else>11 Jugadores</td>
+          <td class="text-center ">{{ reservation.field_reserve.price }}</td>
+          <td class="text-center ">{{ reservation.customer_reserve.first_name}}</td>
           <td><v-chip class="ma-3" label light  color="success" small>Completado</v-chip></td>
         </tr>
       </tbody>

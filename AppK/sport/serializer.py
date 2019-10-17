@@ -12,7 +12,7 @@ class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
         fields = '__all__'
-        depth = 2
+        depth = 1
 
 
 class CompanySerializer(serializers.ModelSerializer):

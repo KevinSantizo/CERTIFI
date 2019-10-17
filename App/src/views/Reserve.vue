@@ -1,39 +1,57 @@
 <template>
-    <v-container>
-        <Navbar /> 
+    <v-container class="my-4">
+      <div class="back">
+        <v-btn text icon color="grey darken-4" router to="/home" class="link"> 
+          <v-icon size="35">mdi-chevron-left</v-icon>
+        </v-btn>
+      </div> 
         <v-layout row wrap>
             <v-flex xs12 sm6 lg3 v-for="company in companies "> 
-                <div class="my-3">
-                    <v-hover v-slot:default="{ hover }">
-                    <v-card class="mx-2 " max="300" flat   :elevation="hover ? 12 : 5" :class="{ 'on-hover': hover }" >
-                        <div class="green accent-1">
-                        <v-row justify="center" align="center">
-                            <v-chip class="ma-2 font-weight-medium subtitle-2" color="teal darken-4" label text-color="white" align="center" justify="center"><v-icon left>mdi-soccer</v-icon>{{ company.name }}</v-chip>
-                        </v-row>
-                        <v-row justify="center" align="center">
-                            <span class="title">{{ company.address }}</span>
-                    </v-row>
-                    <v-divider></v-divider>
-                    </div>
-                    
-            <div class="ma-4">
-         <v-chip-group multiple column active-class="light-green accent-3 black--text font-weight-medium">
-        <v-chip v-for="tag in tags" small :key="tag">
-          {{ tag }}
-        </v-chip>
-      </v-chip-group>
-             <v-card-actions>
-      <v-btn color="success" small outlined class="my-1t black--text" @click="">Reservar</v-btn>
-    </v-card-actions>
-            </div>
-     
-        </v-card>
-           </v-hover>
-           </div>
-             </v-flex>
-                </v-layout> 
+                <div class="ma-3 ">
+                  <v-hover v-slot:default="{ hover }">
+                      <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                        <v-img :src="company.image" height="150px">
+                        </v-img>
+                        <v-footer class="white ma-1"  padless>
+                          <v-row justify="left" no-gutters>
+                         <div><span class="subtitle-2 ma-2">{{ company.name }} {{ company.address}}</span></div> 
+                            <v-col class="text-left  caption black--text" cols="12">
+                                <div class="description">
+                                <span>
+                                  <v-icon size=15 color="amber accent-4">mdi-star-outline</v-icon> 
+                                  <v-icon size=15 color="amber accent-4">mdi-star-outline</v-icon>
+                                  <v-icon size=15 color="amber accent-4">mdi-star-outline</v-icon>
+                                  <v-icon size=15 color="amber accent-4">mdi-star-outline</v-icon>
+                                  <v-icon size=15 color="amber accent-4">mdi-star-outline</v-icon>
+                                </span>
+                                <br>
+                                <span ><v-icon color="black" size="15" class="caption">mdi-map-marker</v-icon>4ta. C 11-a, zona 1, quetzaltenango</span>
+                                </div>
+                              </v-col>
+                              </v-row>
+
+                        </v-footer>
+                        <v-card-actions>
+                          <div class="reserve">
+                            <v-row justify="left" align="left" class="ma-1 my-1"> 
+                              <div> <span class="ma-1 font-weight-bold  green--text" color="teal darken-4">Canchas: 5</span><br>
+                              <div class="span"><span class="ma-1 caption">hola</span></div> 
+                              </div>
+                              <v-row justify="end" align="center" class="ma-1"> 
+                                <v-btn text small class=" font-weight-bold">Reservar<v-icon right size=15>mdi-chevron-right</v-icon></v-btn>
+                              </v-row> 
+                            </v-row> 
+
+                                            
+
+                          </div>
+                        </v-card-actions>
+                      </v-card>
+                    </v-hover>
+                </div>
+            </v-flex>
+        </v-layout> 
     </v-container>
-  
 </template>
 
 <script>
@@ -92,5 +110,34 @@ export default {
   }
   .round{
         border-radius: 10px;
+   }
+   .reserve {
+     border: solid 0.5px grey;
+     width: 100%;
+     border-radius: 5px;
+     margin-top: 1.2em;
+     
+   }
+
+   .calendar {
+     position: absolute;
+     margin-top: 10.1em;
+   }
+   .span {
+     position: relative;
+     margin-top: -0.5em;
+   }
+   .description {
+     position: absolute;
+     margin-top: -0.8em;
+     margin-left: 0.5em;
+   }
+   .back {
+     position: absolute;
+     margin-top: -1.5em;
+     margin-left: 0.1em;
+   }
+   .link {
+     text-decoration: none;
    }
 </style>

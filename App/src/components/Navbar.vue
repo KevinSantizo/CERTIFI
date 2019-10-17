@@ -36,7 +36,7 @@
                     </v-list-item-icon>
                     
                      <v-list-item-content>
-                        <v-list-item-title class="font-weight-medium subtitle-1 black--text">{{ item.title }}</v-list-item-title>
+                        <v-list-item-title class="font-weight-medium caption black--text">{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 </v-list-item-group>
