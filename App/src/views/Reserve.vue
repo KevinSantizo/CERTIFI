@@ -16,7 +16,7 @@
         </v-app-bar>
       </div>
       <template>
-        <v-bottom-navigation :value="activeBtn" scroll-target="#scroll-area-2" hide-on-scroll grow color="teal" absolute>
+        <v-bottom-navigation :value="activeBtn" scroll-target="#scroll-area-2" hide-on-scroll  color="teal" absolute>
           <v-btn class="link" router to="/home">
             <span>Inicio</span>
             <v-icon>mdi-home</v-icon>
@@ -32,7 +32,7 @@
         </v-bottom-navigation>
       </template>
       <v-sheet id="scroll-area-1" class="overflow-y-auto" max-height="600" >
-        <v-container >
+        <v-container class="bottom" >
           <v-layout row wrap>
             <v-flex xs12 sm6 lg3 v-for="company in companies "> 
               <div class="ma-2 my-1 ">
@@ -172,5 +172,9 @@ export default {
      position: absolute;
      margin-left: 13.7em;
      margin-top:  0.2em;
+   }
+
+   .bottom {
+     margin-bottom:  50px;
    }
 </style>

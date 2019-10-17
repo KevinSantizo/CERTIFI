@@ -10,7 +10,6 @@
                     <v-card-actions> 
                         <v-btn text class="font-weight-bold">Reservar <v-icon right size="20">mdi-calendar</v-icon>
                         </v-btn>
-                        <div class="flex-grow-1"></div>
                         <v-btn icon>
                             <v-icon color="grey darken-4">mdi-soccer</v-icon>
                         </v-btn>
@@ -25,7 +24,6 @@
                 </v-img>
                     <v-card-actions>
                         <v-btn text center class="font-weight-bold ">Canchas Favoritas<v-icon right size="22">mdi-star</v-icon></v-btn>
-                        <div class="flex-grow-1" ></div>
                         <v-btn icon>
                             <v-icon color="grey darken-4">mdi-soccer</v-icon>
                         </v-btn>
