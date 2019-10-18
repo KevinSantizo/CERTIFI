@@ -1,20 +1,18 @@
 <template>
-  <v-container >
+  <v-container class="container">
     <v-card class="overflow-hidden" >
-      <div>
-        <v-app-bar class="teal" height="57">
+        <v-app-bar  flat text app class="grey lighten-4"  height="57">
           <v-layout row wrap>
             <v-flex xs12 md12>
               <v-row justify="center" align="center">
                 <v-icon color="black" size="15" >mdi-map-marker</v-icon><span class="font-weight-bold subtitle-1">Quetzaltenango, quetzaltenango</span>
               </v-row>
               <v-row justify="center" align="center">
-                <v-icon color="black" size="15">mdi-calendar</v-icon><span class="font-weight-bold caption" >{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
+                <v-icon color="black" size="15">mdi-calendar</v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
               </v-row>
             </v-flex>
           </v-layout>
         </v-app-bar>
-      </div>
       <template>
         <v-bottom-navigation :value="activeBtn" scroll-target="#scroll-area-2" hide-on-scroll  color="teal" absolute>
           <v-btn class="link" router to="/home">
@@ -94,13 +92,13 @@
 
 <script>
 import axios from 'axios'
-
 export default {
   data: () => ({
         reservations: [ ] ,
         companies: [ ],
         show: false,
         months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado',],
         activeBtn: 1,
         showNav: true,
         color: false
@@ -113,18 +111,14 @@ export default {
         console.log(response.data);
       })
       },
-
     },
     created(){
       this.getCompanies()
     },
-
-
     /*created(){
       this.getDate()
     }*/
 }
-
 </script>
 
 <style scoped>
@@ -139,7 +133,6 @@ export default {
   }
   .round{
     border-radius: 10px;
-
    }
    .reserve {
      border: solid 0.5px grey;
@@ -173,8 +166,10 @@ export default {
      margin-left: 13.7em;
      margin-top:  0.2em;
    }
-
    .bottom {
      margin-bottom:  50px;
    }
+   .container {
+    max-width: 100%;
+}
 </style>
