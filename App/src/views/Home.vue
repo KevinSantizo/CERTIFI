@@ -1,5 +1,5 @@
 <template>
-  <v-container class="my-1">
+  <v-container class="my-1 container">
   <Navbar /> 
     <v-layout row wrap>
         <v-flex xs12 sm6 lg3> 
@@ -170,5 +170,9 @@ import Navbar from '@/components/Navbar'
    }
    .link{
       text-decoration:  none;
+   }
+   .container {
+     position: absolute;
+     max-width: 100%;
    }
 </style>

@@ -2,13 +2,14 @@
    <nav>
        <v-app-bar flat text app class="grey lighten-4" height="57" >
            <v-app-bar-nav-icon class="dark" color="black" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-row justify="center" align="center">
            <v-toolbar-title class="grey--text">
-               <span class="black--text font-weight-bold" dense>¡Welcome!</span>
+               <span class="black--text font-weight-bold" dense>¡Bienvenido!</span>
                <img src="@/assets/ball.svg" alt="" style="width: 35px; position: absolute;">
            </v-toolbar-title>
-           <v-spacer></v-spacer>
-           <v-btn text color="grey">
-               <span dense class="black--text font-weight-bold">Sign Out</span>
+            </v-row>
+           <v-btn text color="grey" class="link" router to="/login">
+               <span dense class="black--text font-weight-bold">Cerrar Sesión</span>
                <v-icon right color="black">mdi-exit-to-app</v-icon>
            </v-btn>
        </v-app-bar>
@@ -34,12 +35,11 @@
                    <v-list-item-icon>
                         <v-icon medium color="black">{{ item.icon }}</v-icon>
                     </v-list-item-icon>
-                    
                      <v-list-item-content>
                         <v-list-item-title class="font-weight-medium caption black--text">{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                </v-list-item-group>
+                </v-list-item-group>             
            </v-list>
        </v-navigation-drawer>
        <v-icon>

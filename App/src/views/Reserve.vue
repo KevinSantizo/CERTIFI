@@ -16,15 +16,15 @@
       <template>
         <v-bottom-navigation :value="activeBtn" scroll-target="#scroll-area-2" hide-on-scroll  color="teal" absolute>
           <v-btn class="link" router to="/home">
-            <span>Inicio</span>
+            <span class="caption font-weight-medium">Inicio</span>
             <v-icon>mdi-home</v-icon>
           </v-btn>
           <v-btn>
-            <span>Favoritas</span>
+            <span  class="caption font-weight-medium">Favoritas</span>
             <v-icon>mdi-heart</v-icon>
           </v-btn>
           <v-btn>
-            <span>Configuración</span>
+            <span  class="caption font-weight-medium">Configuración</span>
             <v-icon>mdi-settings</v-icon>
           </v-btn>
         </v-bottom-navigation>
