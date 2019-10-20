@@ -4,11 +4,17 @@
             <div class="form-group form pa-4 grey lighten-4">
                 <v-btn class="my-3" block  color="light-blue darken-4 white--text" ><v-icon left size="25">mdi-facebook</v-icon> REGÍSTRATE CON FACEBOOK</v-btn>
                 <v-btn block  color="red darken-1 white--text" ><v-icon left size="25">mdi-google-plus</v-icon> REGÍSTRATE CON GOOGLE</v-btn>
-                <v-divider class="my-5"></v-divider>
-                    <div class="form-group">
-                        <v-form ref="form" v-model="form"  class="">
-                            <v-text-field color="black" label="Nombres" type="text" placeholder ="Ingresa tus nombres" outlined height=5 autofocus></v-text-field>
+                    <v-divider class="my-5"></v-divider>
+                        <div class="form-group">
+                            <v-form ref="form" v-model="form"  class="">
+                                <v-row>
+                                <v-col cols="12" sm="6">
+                                <v-text-field color="black" label="Nombres" type="text" placeholder ="Ingresa tus nombres" outlined  autofocus></v-text-field>
+                                </v-col>
+                            <v-col cols="12" sm="6">
                             <v-text-field color="black" label="Apelidos" type="text" placeholder="Ingresa tus apellidos " outlined></v-text-field>
+                            </v-col>
+                            </v-row>
                             <v-text-field color="black" label="Teléfono" type="text" placeholder="Ingresa tu teléfono " outlined></v-text-field>
                             <v-text-field color="black" label="Email" type="email" placeholder="Ingresa tu email " outlined></v-text-field>
                             <v-text-field color="black" label="Contraseña" type="password" placeholder="Crea tu contraseña " outlined></v-text-field>

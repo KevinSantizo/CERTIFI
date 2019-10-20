@@ -18,6 +18,6 @@ export default new Router({
     { path: '/companies', name: 'companies', component: Companies },
     { path: '/reserve', name: 'reserve', component: Reserve },
     { path: '/do_reserve', name: 'do_reserve', component: DoReserve },
-    { path: '/register', name:'register', component: Register}
+    { path: '/register', name:'register', component: Register},
   ]
 })

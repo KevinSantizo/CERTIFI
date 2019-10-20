@@ -4,32 +4,21 @@
         <v-app-bar  flat text app class="grey lighten-4"  height="57">
           <v-layout row wrap>
             <v-flex xs12 md12>
-              <v-row justify="center" align="center">
-                <v-icon color="black" size="15" >mdi-map-marker</v-icon><span class="font-weight-bold subtitle-1">Quetzaltenango, quetzaltenango</span>
+              <v-row justify="left" align="top">
+                <div style="position: absolute; left: 0.2em; top: 0.5em;">
+                <v-btn icon  class="link" >
+                <v-icon color="black" size="30 " >mdi-chevron-left</v-icon>
+                </v-btn>
+              </div>
               </v-row>
               <v-row justify="center" align="center">
-                <v-icon color="black" size="15">mdi-calendar</v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
+                <v-icon color="black" size="15">mdi- </v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
               </v-row>
             </v-flex>
           </v-layout>
         </v-app-bar>
-      <template>
-        <v-bottom-navigation :value="activeBtn" scroll-target="#scroll-area-2" hide-on-scroll  color="teal" absolute>
-          <v-btn class="link" router to="/home">
-            <span class="caption font-weight-medium">Inicio</span>
-            <v-icon>mdi-home</v-icon>
-          </v-btn>
-          <v-btn>
-            <span  class="caption font-weight-medium">Favoritas</span>
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-          <v-btn>
-            <span  class="caption font-weight-medium">Configuración</span>
-            <v-icon>mdi-settings</v-icon>
-          </v-btn>
-        </v-bottom-navigation>
-      </template>
-      <v-sheet id="scroll-area-1" class="overflow-y-auto" max-height="600" >
+      <BottomNavigation/>  
+      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
         <v-container class="bottom" >
           <v-layout row wrap>
             <v-flex xs12 sm6 lg3 v-for="company in companies "> 
@@ -37,10 +26,6 @@
                 <v-hover v-slot:default="{ hover }">
                   <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                     <v-img :src="company.image" height="150px">
-                      <v-row justify="left" align="center" class="ma-3 my-15">
-                          <v-icon @click="color = !color" color="black" size="30" >mdi-heart-outline
-                          </v-icon>
-                      </v-row>
                     </v-img>
                     <v-footer class="white ma-1"  padless>
                       <v-row justify="left" no-gutters>
@@ -92,6 +77,7 @@
 
 <script>
 import axios from 'axios'
+import BottomNavigation from '@/components/BottomNavigation'
 export default {
   data: () => ({
         reservations: [ ] ,
@@ -103,6 +89,9 @@ export default {
         showNav: true,
         color: false
     }),
+     components: {
+    BottomNavigation
+  },
     methods: {
       getCompanies() {
       const path = 'http://127.0.0.1:8000/sport/companies/'
@@ -171,5 +160,6 @@ export default {
    }
    .container {
     max-width: 100%;
-}
+    max-height: 100%;
+  }
 </style>
