@@ -23,23 +23,16 @@
       <div style="top: 1em;">
       <v-slide-group
         v-model="model"
-        class="ma-1">
-        <v-slide-item v-slot:default="{ active, toggle }">
+        class="" style="top: -2em;">
+        <v-slide-item v-for="image in images" :key="image" v-slot:default="{ active, toggle }">
           <v-card :color="active ? 'primary' : 'grey lighten-1'" class="ma-4" height="100" width="200" @click="toggle">
              
-                <v-img src="http://plusempresarial.com/wp-content/uploads/2016/03/cancha.jpg" height="100" width="200">
+                <v-img :src="image.src" height="100" width="200">
               </v-img>
               
           </v-card>
         </v-slide-item>
-        <v-slide-item v-slot:default="{ active, toggle }">
-          <v-card :color="active ? 'primary' : 'grey lighten-1'" class="ma-4" height="100" width="200" @click="toggle">
-             
-                <v-img src="http://plusempresarial.com/wp-content/uploads/2016/03/cancha.jpg" height="100" width="200">
-              </v-img>
-              
-          </v-card>
-        </v-slide-item>
+        
       </v-slide-group>
   </div>
             <v-layout row wrap>
@@ -112,7 +105,21 @@ export default {
         days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado',],
         activeBtn: 1,
         showNav: true,
-        color: false
+        color: false,
+        images: [
+          { src: "https://bogota.gov.co/sites/default/files/styles/despliegue_1366x768_px/public/field/image/Nueva%20cancha%20sint%C3%A9tica%20en%20el%20Parque%20Las%20Cruces%20beneficiar%C3%A1%20comunidad%20de%20tres%20localidades%20P.jpg"},
+          { src: "https://cdn.futbolperuano.com/sdi/2018/07/23/donde-alquilar-un-cancha-sintetica-en-lima-norte-para-las-pichangas-658476.jpg"},
+          { src: "https://lh3.googleusercontent.com/6ygjCkkb-sYeWWJLh964wzsu-rnQcpquw2I9ebvQ4xzKCxoFnE0tWpuPXN7yV85rCdgEWqJq=w1080-h608-p-no-v0"},
+          { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1vYclJ6emIr9MCaXt8cH754_vIRt-ouh_I6IuIj58t_SPrjxd&s"},
+          { src: "https://www.parqueygrama.com/wp-content/uploads/2017/03/grama-sintetica-para-canchas-de-futbol-2.png"},
+          { src: "https://www.pqs.pe/sites/default/files/styles/852x479/public/archivos/2015/actualidad/01/sabugattas/pastosintetico-lacanchita-futbol7-3.jpg?itok=awaMBCao"},
+          { src: "http://www.tucaqueta.com/wp-content/uploads/2017/01/Cancha.jpg"},
+          { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEgGMX5i7iqw9ALETWvwt1shQtrmQp7LBnCqqY3DNLgKAMV7-sA&s"},
+          { src: "https://files.alerta.rcnradio.com/alerta_tolima_prod/public/styles/article_desktop/public/migration/canchas14deoctubre.png?itok=thGx-QGr"},
+          { src: "https://www.eluniversal.com.co/sites/default/files/201706/cancha_2.jpg"},
+          { src: "http://www.eje21.com.co/site/wp-content/uploads/2016/04/Cancha-sintetica-de-la-terminal-de-manizales.jpg"},
+          { src: "https://files.rcnradio.com/public/styles/img_galeria/public/2019-02/whatsapp_image_2019-02-11_at_4.22.50_pm_1_0.jpeg?itok=pjSrd8tA"}
+        ]
     }),
      components: {
     BottomNavigation
