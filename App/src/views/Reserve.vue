@@ -20,7 +20,8 @@
       <BottomNavigation/>  
       <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
         <v-container class="bottom" >
-          <v-layout row wrap>
+          <v-layout row wrap >
+            <v-row justify="space-around">
             <v-flex xs12 sm6 lg3 v-for="company in companies "> 
               <div class="ma-2 my-1 ">
                 <v-hover v-slot:default="{ hover }">
@@ -68,6 +69,7 @@
                 </v-hover>
               </div>
             </v-flex>
+            </v-row>
           </v-layout>
         </v-container>
       </v-sheet>

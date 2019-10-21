@@ -1,12 +1,12 @@
 <template>
     <v-container class="my-4">
         <v-row justify="center" align="center" class="my-1 " >
-            <div class="form-group form pa-4 grey lighten-4">
+            <div class="form-group ma-6 ">
                 <v-btn class="my-3" block  color="light-blue darken-4 white--text" ><v-icon left size="25">mdi-facebook</v-icon> INICIA SESIÓN CON FACEBOOK</v-btn>
                 <v-btn block  color="red darken-1 white--text" ><v-icon left size="25">mdi-google-plus</v-icon> INICIA SESIÓN CON GOOGLE</v-btn>
-                <v-divider class="my-5"></v-divider>
-                    <div class="form-group">
-                        <v-form ref="form" v-model="form"  class="pa-4 pt-6">
+                <v-divider class="my-3"></v-divider>
+                    <div class="form-group ">
+                        <v-form ref="form" v-model="form" class="form">
                             <v-text-field color="black" label="Email" type="email" placeholder ="Ingresa tu email" outlined height=5 autofocus></v-text-field>
                             <v-text-field color="black" label="Password" type="password" placeholder="Ingresa tu contraseña" outlined></v-text-field>
                             <v-btn block  color="light-green accent-4 white--text" class="link" router to="/home" >INICIA SESIÓN</v-btn>          
@@ -53,12 +53,7 @@
 </script>
 
 <style scoped>
-.form {
-    width: 30em;
-    bottom: 3em !important;
-    border: 1px solid black;
-    border-radius: 10px;
-}
+
 .link {
     text-decoration: none;
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation scroll-target="#scroll-area-2" hide-on-scroll   color="teal" absolute>
+  <v-bottom-navigation scroll-target="#scroll-area-2" hide-on-scroll   color="teal" class=" " absolute>
     <v-btn class="link" router to="/home">
       <span class="caption font-weight-medium">Inicio</span>
       <v-icon >mdi-home</v-icon>
@@ -26,7 +26,7 @@ export default {
         selected: [],
         expand: false,
         expand2: false,
-        show: false,
+       
         months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
         days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado',],
         activeBtn: 1,
