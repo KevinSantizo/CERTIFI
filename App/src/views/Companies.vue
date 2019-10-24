@@ -1,5 +1,4 @@
 <template>
-  <v-container class="container round transparent">
     <v-card class="overflow-hidden" >
       <v-app-bar  flat text app class="grey lighten-4"  height="57">
             <v-layout row wrap>
@@ -19,8 +18,8 @@
       <v-item-group v-model="selected" multiple> 
         <v-row justify="space-around">
           <v-col v-for="(company, i) in companies" :key="i" cols="12" md="4">
-              <v-hover v-slot:default="{ hover }">
-                <v-card  max="300" flat class="transparent" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }" >
+              <v-hover >
+                <v-card  max="300" flat class="transparent" :elevation=12 >
                   <v-item v-slot:default="{ active, toggle }">
                     <v-img  :src="company.image" height="10em" class="text-right pa-2" @click="toggle"  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)">
                       <v-btn icon  text color="red accent-4" @click="toggle" :input-value="active">
@@ -46,7 +45,7 @@
                     </v-card-title>
                   </v-img>
                 </v-item>
-              <v-card-action>
+              <v-card-actions>
                 <v-menu transition="scale-transition" origin="center center">
                   <template v-slot:activator="{ on }">
                     <v-btn block color="grey lighten-4"  v-on="on">
@@ -74,7 +73,7 @@
                         </v-list>
                       </v-menu>
                       <div class="mx-4 hidden-sm-and-down"></div>
-                    </v-card-action>
+                    </v-card-actions>
                   </v-card>
                 </v-hover>
               </v-col>
@@ -83,7 +82,6 @@
           </v-container>
       </v-sheet>
     </v-card>
-  </v-container>
 </template>
 
 <script>

@@ -1,5 +1,4 @@
 <template>
-  <v-container class="container">
     <v-card class="overflow-hidden" >
         <v-app-bar  flat text app class="grey lighten-4"  height="57">
           <v-layout row wrap>
@@ -20,10 +19,8 @@
       <BottomNavigation/>  
       <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
         <v-container class="bottom" >
-          <v-layout row wrap >
             <v-row justify="space-around">
-            <v-flex xs12 sm6 lg3 v-for="company in companies "> 
-              <div class="ma-2 my-1 ">
+            <v-col  v-for="(company, index) in companies" :key="index" cols="12" md="4"> 
                 <v-hover v-slot:default="{ hover }">
                   <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                     <v-img :src="company.image" height="150px">
@@ -67,14 +64,11 @@
                     </v-card-actions>
                   </v-card>
                 </v-hover>
-              </div>
-            </v-flex>
+            </v-col>
             </v-row>
-          </v-layout>
         </v-container>
       </v-sheet>
     </v-card>
-  </v-container>
 </template>
 
 <script>

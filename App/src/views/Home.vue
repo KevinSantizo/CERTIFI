@@ -1,9 +1,8 @@
 <template>
-  <v-container class="container round transparent">
     <v-card class="overflow-hidden" >
       <Navbar/>
       <BottomNavigation/> 
-      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="620" >
+      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
       <v-container class="bottom" >
       <v-layout row wrap>
         <v-flex xs12 sm6 lg3> 
@@ -103,8 +102,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="tex-center" v-for="(reservation, i) in reservations" >
-                      <td class="text-center">{{ ++i }}</td>
+                    <tr class="tex-center" v-for="(reservation, index) in reservations" :key="index">
+                      <td class="text-center">{{ index+1 }}</td>
                       <td class="text-center ">{{ reservation.id }}</td>
                       <td class="text-center ">{{ reservation.company_reserve.name }}</td>
                       <td class="text-center ">{{ reservation.schedule_date }}</td>
@@ -126,7 +125,6 @@
       </v-container>
       </v-sheet>      
     </v-card>
-  </v-container>
 </template>
 
 <script>
