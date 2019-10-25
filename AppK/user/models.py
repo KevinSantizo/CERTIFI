@@ -3,7 +3,24 @@ from django.db import models
 # Create your models here.
 
 
+class Department(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+        
+
+class Town(models.Model):
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name + ', ' + self.department.name
+
+
 class Customer(models.Model):
+    town = models.ForeignKey(Town, on_delete=models.CASCADE, null=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)

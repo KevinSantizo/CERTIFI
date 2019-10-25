@@ -1,29 +1,22 @@
 <template>
-  <v-container class="container">
     <v-card class="overflow-hidden" >
-        <v-app-bar  flat text app class="grey lighten-4"  height="57">
+        <v-toolbar  flat text  class="grey lighten-4"  height="57">
           <v-layout row wrap>
             <v-flex xs12 md12>
               <v-row justify="left" align="top">
-                <div style="position: absolute; left: 0.2em; top: 0.5em;">
-                <v-btn icon  class="link" >
-                <v-icon color="black" size="30 " >mdi-chevron-left</v-icon>
-                </v-btn>
-              </div>
+                
               </v-row>
               <v-row justify="center" align="center">
                 <v-icon color="black" size="15">mdi- </v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
               </v-row>
             </v-flex>
           </v-layout>
-        </v-app-bar>
+        </v-toolbar>
       <BottomNavigation/>  
       <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
         <v-container class="bottom" >
-          <v-layout row wrap >
             <v-row justify="space-around">
-            <v-flex xs12 sm6 lg3 v-for="company in companies "> 
-              <div class="ma-2 my-1 ">
+            <v-col  v-for="(company, index) in companies" :key="index" cols="12" md="4"> 
                 <v-hover v-slot:default="{ hover }">
                   <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                     <v-img :src="company.image" height="150px">
@@ -67,14 +60,11 @@
                     </v-card-actions>
                   </v-card>
                 </v-hover>
-              </div>
-            </v-flex>
+            </v-col>
             </v-row>
-          </v-layout>
         </v-container>
       </v-sheet>
     </v-card>
-  </v-container>
 </template>
 
 <script>
@@ -96,7 +86,7 @@ export default {
   },
     methods: {
       getCompanies() {
-      const path = 'http://127.0.0.1:8000/sport/companies/'
+      const path = 'http://192.168.8.105:8000/sport/companies/'
       axios.get(path).then((response)=> {
         this.companies = response.data
         console.log(response.data);
@@ -158,7 +148,7 @@ export default {
      margin-top:  0.2em;
    }
    .bottom {
-     margin-bottom:  50px;
+     margin-bottom:  75px;
    }
    .container {
     max-width: 100%;

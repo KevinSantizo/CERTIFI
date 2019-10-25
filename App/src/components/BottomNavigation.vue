@@ -1,20 +1,20 @@
 <template>
-  <v-bottom-navigation scroll-target="#scroll-area-2" hide-on-scroll   color="teal" class=" " absolute>
-    <v-btn class="link" router to="/home">
+  <v-bottom-navigation  color="teal" absolute>
+    <v-btn class="link" router to="/home" >
       <span class="caption font-weight-medium">Inicio</span>
-      <v-icon >mdi-home</v-icon>
+      <v-icon size=30>mdi-home</v-icon>
     </v-btn>
-    <v-btn class="link" router to="/companies">
+    <v-btn class="link" router to="/companies" >
       <span class="caption font-weight-medium">Compañías</span>
-      <v-icon >mdi-domain</v-icon>
+      <v-icon size=30>mdi-domain</v-icon>
     </v-btn>
-     <v-btn class="link" router to="/reserve">
-      <span  class="caption font-weight-medium">Reservar</span>
-      <v-icon >mdi-calendar</v-icon>
+     <v-btn class="link" router to="/reserve" >
+      <span  class="caption font-weight-medium" >Reservar</span>
+      <v-icon size=30>mdi-calendar</v-icon>
     </v-btn>
-    <v-btn class="link" router to="/account">
+    <v-btn class="link" router to="/account" >
       <span class="caption font-weight-medium">Mi Perfil</span>
-      <v-icon >mdi-account</v-icon>
+      <v-icon size=30>mdi-account</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
