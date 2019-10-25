@@ -1,21 +1,17 @@
 <template>
     <v-card class="overflow-hidden" >
-        <v-app-bar  flat text app class="grey lighten-4"  height="57">
+        <v-toolbar  flat text  class="grey lighten-4"  height="57">
           <v-layout row wrap>
             <v-flex xs12 md12>
               <v-row justify="left" align="top">
-                <div style="position: absolute; left: 0.2em; top: 0.5em;">
-                <v-btn icon  class="link" >
-                <v-icon color="black" size="30 " >mdi-chevron-left</v-icon>
-                </v-btn>
-              </div>
+                
               </v-row>
               <v-row justify="center" align="center">
                 <v-icon color="black" size="15">mdi- </v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
               </v-row>
             </v-flex>
           </v-layout>
-        </v-app-bar>
+        </v-toolbar>
       <BottomNavigation/>  
       <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
         <v-container class="bottom" >
@@ -152,7 +148,7 @@ export default {
      margin-top:  0.2em;
    }
    .bottom {
-     margin-bottom:  50px;
+     margin-bottom:  75px;
    }
    .container {
     max-width: 100%;

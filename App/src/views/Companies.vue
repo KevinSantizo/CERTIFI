@@ -1,6 +1,6 @@
 <template>
-    <v-card class="overflow-hidden" >
-      <v-app-bar  flat text app class="grey lighten-4"  height="57">
+      <v-card class="overflow-y-auto transparent">
+        <v-toolbar flat text app class="grey lighten-4"  height="57">
             <v-layout row wrap>
                 <v-flex xs12 md12>
                 <v-row justify="center" align="center">
@@ -11,9 +11,10 @@
                 </v-row>
                 </v-flex>
             </v-layout>
-        </v-app-bar>
+        </v-toolbar>
       <BottomNavigation/>
-      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
+      <v-sheet class="overflow-y-auto transparent" max-height="600" >
+      
       <v-container class="bottom" >
       <v-item-group v-model="selected" multiple> 
         <v-row justify="space-around">
@@ -81,7 +82,8 @@
           </v-item-group>
           </v-container>
       </v-sheet>
-    </v-card>
+      </v-card>
+
 </template>
 
 <script>
@@ -166,6 +168,6 @@ export default {
      bottom: -0.3em;
    }
    .bottom {
-     margin-bottom: 50px;
+     margin-bottom: 75px;
    }
 </style>

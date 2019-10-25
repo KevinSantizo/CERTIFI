@@ -1,8 +1,7 @@
 <template>
     <v-card class="overflow-hidden" >
-      <Navbar/>
       <BottomNavigation/> 
-      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="600" >
+      <v-sheet id="scroll-area-1" class="overflow-y-auto transparent" max-height="700" >
       <v-container class="bottom" >
       <v-layout row wrap>
         <v-flex xs12 sm6 lg3> 
@@ -208,6 +207,6 @@ import BottomNavigation from '@/components/BottomNavigation'
      bottom: -0.3em;
    }
   .bottom {
-     margin-bottom: 50px;
+     margin-bottom: 75px;
    }
 </style>

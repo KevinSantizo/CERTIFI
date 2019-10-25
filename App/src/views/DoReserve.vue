@@ -1,25 +1,28 @@
   <template>
-    <v-container class="container">
-      <v-app-bar  flat text app class="grey lighten-4"  height="57">
-        <v-app-bar-icon></v-app-bar-icon>
-        <v-layout row wrap>
-          <v-flex xs12 md12>
-            <v-row justify="left" align="top">
-              <div style="position: absolute; left: 0.2em; top: 0.5em;">
-                <v-btn icon  class="link" router to ="/reserve">
-                  <v-icon color="black" size="30 ">mdi-chevron-left</v-icon>
+ <v-card class="transparent">
+        <v-toolbar   flat text app class="grey lighten-4"  height="57">
+          <v-app-bar-icon></v-app-bar-icon>
+          <v-layout row wrap>
+            <v-flex xs12 md12>
+              <v-row justify="left" align="top">
+                <div style="position: absolute; left: 0.2em; top: 0.5em;">
+                <v-btn icon  class="link" >
+                <v-icon color="black" size="30 " >mdi-chevron-left</v-icon>
                 </v-btn>
               </div>
-            </v-row>
-            <v-row justify="center" align="center">
-              <v-icon color="black" size="15">mdi-calendar</v-icon><span class="font-weight-bold caption" >{{ this.days[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
-            </v-row>
-          </v-flex>
-        </v-layout>
-      </v-app-bar>
-      <v-divider inset vertical> </v-divider>
-      <div style="top: 1em;">
-      <v-slide-group v-model="model" style="top: -2em;">
+              </v-row>
+              <v-row justify="center" align="center">
+                <v-icon color="black" size="15">mdi-calendar</v-icon><span class="font-weight-bold caption" >{{ this.dayss[new Date().getDay() ]}},{{ new Date().getDate()}} de {{  this.months[new Date().getMonth()] }} {{ new Date().getFullYear() }}</span>
+              </v-row>
+            </v-flex>
+          </v-layout>
+        </v-toolbar >
+              <v-sheet class="overflow-y-auto transparent" max-height="600" >
+
+        <v-container class="bottom" >
+        <v-divider inset vertical> </v-divider>
+     <div style="top: 1em;">
+      <v-slide-group class="" style="top: -2em;">
         <v-slide-item v-for="(image, index) in images" :key="index" v-slot:default="{ active, toggle }">
           <v-card :color="active ? 'primary' : 'grey lighten-1'" class="ma-4" height="100" width="200" @click="toggle">
             <v-img :src="image.src" class="text-right" height="100" width="200">
@@ -28,7 +31,8 @@
           </v-card>
         </v-slide-item>
       </v-slide-group>
-      </div>  
+        </div>
+      
       <v-card class="mb-3" max-width="100%">
         <div class="row no-gutters">
           <div class="col-md-4 pa-3" >
@@ -57,25 +61,25 @@
               </v-row>
             </v-card-actions>
           </div>
-          <div class="col-md-8 my-3" style="top: -1em;">
+          <div class="col-md-8 " style="top: -1em;">
             <div class="card-body">
               <h5 class="card-title">Elije  una de las Canchas.</h5>
               <template>
                 <v-layout row wrap >
-                  <v-flex  v-for="(field, i ) in fields" :key="i" class="ma-1 pa-2">
+                  <v-flex  v-for="(field, i ) in fields" :key="i" class="ma-1 pa-2" style="width: 250px !important">
                     <v-hover >
-                      <v-card class="reserve"  flat :elevation=12 color="lime lighten-5 "  gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)">
+                      <v-card class="reserve"  flat :elevation=12 color="lgrey lighten-4"  gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)">
                         <v-row justify="left" align="left" class="ma-3 my-1">
                           <div>
                             <span class="my-1">Cancha</span>
                             <span class="ma-1 font-weight-bold  green--text" color="teal darken-4">{{ field.name}}</span>
                             <div class="span">
-                              <span v-if="field.type == 1" class="caption font-weight-bold">5 Jugadores</span>
+                              <span v-if="field.type == 1" class="caption font-weight-bold black--text">5 Jugadores</span>
                               <span v-else-if="field.type == 2" class="caption font-weight-bold">7 Jugadores</span>
                               <span v-else class="caption font-weight-bold">11 Jugadores</span>
                             </div> 
                             <div class="span">
-                              <v-chip small label class="ma-2 font-weight-bold black--text"  color="orange"  style="left: -0.8em;" >{{ field.price }}</v-chip>
+                              <v-chip small label class="ma-2 font-weight-bold black--text orange"  outlined style="left: -0.8em;" >{{ field.price }}</v-chip>
                             </div> 
                           </div>
                           <v-row justify="end" align="center" class="pa-1"> 
@@ -86,32 +90,32 @@
                               </template>
                               <form action="">
                               <v-card>
-                                <v-card-title>
+                                <v-card-title class="cyan darken-2">
                                   <span class="headline">Reservar</span>
                                 </v-card-title>
                                 
                                 <v-card-text>
-                                  <span>Cancha B, 5 jugadores</span><br>
-                                  <span>Futeca, xela</span><br>
-                                  <span>Cliente: Juanito Pérez</span>
-                                    <v-row>
+                                  <span class="black--text font-weight-medium">Cancha B, 5 jugadores</span><br>
+                                  <span class="black--text font-weight-medium">Futeca, xela</span><br>
+                                  <span class="black--text font-weight-medium">Cliente: Juanito Pérez</span>
                                     <v-hover >
-                                      <v-card max-width="480" class="mx-auto" :elevation=12>
+                                      <v-card max-width="100%" class="mx-auto" color="cyan darken-2" >
                                         <v-card-text> 
-                                          <span class="subheading">Horarios disponibles (hoy)</span>
-                                          <v-chip-group column multiple active-class="lime accent-3 black--text">
+                                          <span class="subheading black--text font-weight-medium">Horarios disponibles (hoy)</span>
+                                          
+                                          <v-chip-group column multiple active-class="lime accent-3 black--text" >
+                                            <v-row justify="space-around" class="ma-2">
                                             <v-chip small v-for="(time, i)  in times" :key="i"  >
                                               {{ time }}
                                             </v-chip>
+                                            </v-row>
                                           </v-chip-group>
                                         </v-card-text>
                                       </v-card>
                                     </v-hover>
-                                    </v-row>
                                     <v-divider inset vertical></v-divider>
                                     <v-spacer></v-spacer>
-                                    <span>Resto de la semana</span>
-                                    
+                                    <span class="black--text font-weight-medium">Resto de la semana</span>
                                        <v-slide-group multiple show-arrows>
                                           <v-slide-item
                                             v-for="(day, i) in days"
@@ -132,12 +136,29 @@
                                           </v-slide-item>
                                         </v-slide-group>
                                     <v-divider></v-divider>
-                                        <v-text-field label="Número de teléfono" outlined  type="text" style="top: -1em;"></v-text-field>
+                                    
+                                    <span class=" black--text font-weight-medium">Extras: </span>
+                                    <span>Puede solicitar balones o uniformes, indique la cantidad.</span><br>
+                                    <span>Balón Q20.00 c/u</span> <v-divider inset vertical class="mx-5"></v-divider> <span>Uniforme o Gabachas Q25.00</span> 
+                                    <div style="margin-top: -2em;">
+                                            <v-row align="center" class="ma-1">
+                                              <v-checkbox  v-model="enabled" hide-details class="shrink mr-2 mt-0" light color="light-green accent-4"></v-checkbox>
+                                              <span>Balón <v-icon>mdi-soccer</v-icon></span>
+                                              <v-col cols="12" sm="6" md="3">
+                                                <v-text-field type="number" :disabled="!enabled" name="input-1" id="test" min=0 max=10  maxlength=3 v-model="test"></v-text-field>
+                                              </v-col>
+                                              <v-checkbox  v-model="enable" hide-details class="shrink mr-2 mt-0" color="light-green accent-4"></v-checkbox>
+                                              <span>Uniforme <v-icon>mdi-tshirt-crew-outline</v-icon></span>
+                                              <v-col cols="12" sm="6" md="3">
+                                                <v-text-field type="number" :disabled="!enable" name="input-1" id="test2" min=0 max=50  maxlength=3 v-model="test2"></v-text-field>
+                                              </v-col>
+                                            </v-row>
+                                            </div>
                                 </v-card-text>
                               <v-card-actions>
                               <v-spacer></v-spacer>
                               <v-btn color="red accent-4" text @click="dialog = false">Cancelar</v-btn>
-                              <v-btn color="light-green accent-4"  outlined  @click="dialog = false">Guardar</v-btn>
+                              <v-btn color="light-green accent-4"  @click="dialog = false">Guardar</v-btn>
                               </v-card-actions>
                               </v-card>
                               </form>
@@ -153,7 +174,9 @@
           </div>
         </div>
       </v-card>
-    </v-container>
+        </v-container>
+              </v-sheet>
+    </v-card>
   </template>
 
 <script>
@@ -165,11 +188,13 @@ export default {
         companies: [ ],
         show: false,
         months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado',],
+        dayss: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado',],
         activeBtn: 1,
         showNav: true,
         color: false,
         dialog: false,
+        enabled: false,
+        enable: false,
         images: [
           { src: "https://bogota.gov.co/sites/default/files/styles/despliegue_1366x768_px/public/field/image/Nueva%20cancha%20sint%C3%A9tica%20en%20el%20Parque%20Las%20Cruces%20beneficiar%C3%A1%20comunidad%20de%20tres%20localidades%20P.jpg"},
           { src: "https://lh3.googleusercontent.com/6ygjCkkb-sYeWWJLh964wzsu-rnQcpquw2I9ebvQ4xzKCxoFnE0tWpuPXN7yV85rCdgEWqJq=w1080-h608-p-no-v0"},
@@ -203,7 +228,9 @@ export default {
         'V',
         'S',
         'D'
-      ]
+      ],
+      test: 0,
+      test2: 0
     }),
      components: {
     BottomNavigation
@@ -281,4 +308,7 @@ export default {
   .actions {
   bottom: 3em; 
   }
+    .text{
+  min-height: 30px !important;
+}
 </style>

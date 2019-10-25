@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from sport.models import Field, Reservation, Company
+from sport.models import Field, Reservation, Company, Schedule
 
 
 class FieldSerializer(serializers.ModelSerializer):
@@ -26,4 +26,8 @@ class DoReservationSerializer(serializers.ModelSerializer):
         model = Reservation
         fields = '__all__'
         
-    
+
+class ScheduleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Schedule
+        fields = '__all__'
