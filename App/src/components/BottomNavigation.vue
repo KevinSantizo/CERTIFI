@@ -1,18 +1,35 @@
 <template>
+<<<<<<< HEAD
   <v-bottom-navigation  color="teal" absolute>
     <v-btn class="link" router to="/home" >
+=======
+  <v-bottom-navigation  horizontal absolute>
+    <v-btn class="link" router to="/home" text color="deep-purple accent-4">
+>>>>>>> f4d97fc094e07e9bddae7602adc49fb6e7dedabc
       <span class="caption font-weight-medium">Inicio</span>
       <v-icon size=30>mdi-home</v-icon>
     </v-btn>
+<<<<<<< HEAD
     <v-btn class="link" router to="/companies" >
+=======
+    <v-btn class="link" router to="/companies" text color="deep-purple accent-4">
+>>>>>>> f4d97fc094e07e9bddae7602adc49fb6e7dedabc
       <span class="caption font-weight-medium">Compañías</span>
       <v-icon size=30>mdi-domain</v-icon>
     </v-btn>
+<<<<<<< HEAD
      <v-btn class="link" router to="/reserve" >
       <span  class="caption font-weight-medium" >Reservar</span>
       <v-icon size=30>mdi-calendar</v-icon>
     </v-btn>
     <v-btn class="link" router to="/account" >
+=======
+     <v-btn class="link" router to="/reserve" text color="deep-purple accent-4">
+      <span  class="caption font-weight-medium" text color="deep-purple accent-4">Reservar</span>
+      <v-icon >mdi-calendar</v-icon>
+    </v-btn>
+    <v-btn class="link" router to="/account" text color="deep-purple accent-4">
+>>>>>>> f4d97fc094e07e9bddae7602adc49fb6e7dedabc
       <span class="caption font-weight-medium">Mi Perfil</span>
       <v-icon size=30>mdi-account</v-icon>
     </v-btn>

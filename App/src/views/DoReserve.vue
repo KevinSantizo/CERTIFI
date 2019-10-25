@@ -134,6 +134,7 @@
                                               {{ day }}
                                             </v-btn>
                                           </v-slide-item>
+<<<<<<< HEAD
                                         </v-slide-group>   
                                         <v-divider class="ma-1"></v-divider>                                 
                                     <span class=" black--text font-weight-medium">Extras: </span>
@@ -151,6 +152,27 @@
                                                 <v-text-field type="number" :disabled="!enable" name="input-1" id="test2" min=0 max=50  maxlength=3 ></v-text-field>
                                               </v-flex>
                                             </v-layout>
+=======
+                                        </v-slide-group>
+                                    <v-divider></v-divider>
+                                    
+                                    <span class=" black--text font-weight-medium">Extras: </span>
+                                    <span>Puede solicitar balones o uniformes, indique la cantidad.</span><br>
+                                    <span>Balón Q20.00 c/u</span> <v-divider inset vertical class="mx-5"></v-divider> <span>Uniforme o Gabachas Q25.00</span> 
+                                    <div style="margin-top: -2em;">
+                                            <v-row align="center" class="ma-1">
+                                              <v-checkbox  v-model="enabled" hide-details class="shrink mr-2 mt-0" light color="light-green accent-4"></v-checkbox>
+                                              <span>Balón <v-icon>mdi-soccer</v-icon></span>
+                                              <v-col cols="12" sm="6" md="3">
+                                                <v-text-field type="number" :disabled="!enabled" name="input-1" id="test" min=0 max=10  maxlength=3 v-model="test"></v-text-field>
+                                              </v-col>
+                                              <v-checkbox  v-model="enable" hide-details class="shrink mr-2 mt-0" color="light-green accent-4"></v-checkbox>
+                                              <span>Uniforme <v-icon>mdi-tshirt-crew-outline</v-icon></span>
+                                              <v-col cols="12" sm="6" md="3">
+                                                <v-text-field type="number" :disabled="!enable" name="input-1" id="test2" min=0 max=50  maxlength=3 v-model="test2"></v-text-field>
+                                              </v-col>
+                                            </v-row>
+>>>>>>> f4d97fc094e07e9bddae7602adc49fb6e7dedabc
                                             </div>
                                 </v-card-text>
                               <v-card-actions>

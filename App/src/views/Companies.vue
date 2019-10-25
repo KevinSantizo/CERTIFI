@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
       <v-card class="overflow-hidden">
+=======
+      <v-card class="overflow-y-auto transparent">
+>>>>>>> f4d97fc094e07e9bddae7602adc49fb6e7dedabc
         <v-toolbar flat text app class="grey lighten-4"  height="57">
             <v-layout row wrap>
                 <v-flex xs12 md12>
